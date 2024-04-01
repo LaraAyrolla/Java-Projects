@@ -55,23 +55,23 @@ public class TemperatureTests {
     {
         Assert.assertTrue(
                 temperature.classify(-5)
-                        .equals(
-                            temperature.NEGATIVE_TEMPERATURE
-                        )
+                .equals(
+                        temperature.NEGATIVE_TEMPERATURE
+                )
         );
 
         Assert.assertTrue(
                 temperature.classify(0)
-                        .equals(
-                            temperature.ZERO_TEMPERATURE
-                        )
+                .equals(
+                        temperature.ZERO_TEMPERATURE
+                )
         );
 
         Assert.assertTrue(
                 temperature.classify(18)
-                        .equals(
-                            temperature.POSITIVE_TEMPERATURE
-                        )
+                .equals(
+                        temperature.POSITIVE_TEMPERATURE
+                )
         );
     }
 
