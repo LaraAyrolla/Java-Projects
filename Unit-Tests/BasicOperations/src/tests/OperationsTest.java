@@ -29,7 +29,16 @@ public class OperationsTest {
         Assert.assertTrue(smallestValue == 9);
     }
 
-    //test cases 6 and 7 -> compare objects
+    @Test
+    public void shouldCompareObjects()
+    {
+        String o1 = "Hello!";
+        String o2 = "Hello!";
+        String o3 = "Hello.";
+
+        Assert.assertSame(o1, o2);
+        Assert.assertNotSame(o1, o3);
+    }
 
     @Test
     public void shouldVerifySquareRoot()

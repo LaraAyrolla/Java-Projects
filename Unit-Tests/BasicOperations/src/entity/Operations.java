@@ -11,10 +11,6 @@ public class Operations {
         return Math.min(v1, v2);
     }
 
-    //compare two objects
-
-    //compare two objects hash
-
     public double squareRoot(double v1)
     {
         return Math.sqrt(v1);
