@@ -12,7 +12,7 @@ public class Temperature {
 
     public double convertCelsiusToKelvin (double celsiusValue)
     {
-        return celsiusValue + + 273.15;
+        return celsiusValue + 273.15;
     }
 
     public String classify (double temperature)
