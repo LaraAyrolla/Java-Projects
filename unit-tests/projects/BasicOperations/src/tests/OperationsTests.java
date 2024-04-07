@@ -7,7 +7,7 @@ import org.junit.*;
 import static java.lang.Double.NaN;
 import static java.lang.Double.POSITIVE_INFINITY;
 
-public class OperationsTest {
+public class OperationsTests {
     Operations operations = new Operations();
 
     @Test
