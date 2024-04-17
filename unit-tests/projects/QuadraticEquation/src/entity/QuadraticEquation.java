@@ -6,10 +6,10 @@ import static java.lang.Math.sqrt;
 public class QuadraticEquation {
     public final String MESSAGE_INCORRECT_COEFFICIENTS = "Incorrectly informed coefficients";
     public final String MESSAGE_EQUALITY_CONFIRMED = "Equality confirmed: 0 = 0";
-    public final String MESSAGE_LINEAR_EQUATION = "This is a linear equation"; //show real root of equation
+    public final String MESSAGE_LINEAR_EQUATION = "This is a linear equation";
     public final String MESSAGE_NO_REAL_ROOTS = "This equation has no real roots";
-    public final String MESSAGE_TWO_EQUAL_REAL_ROOTS = "This equation has two equal real roots"; //show real roots of equation
-    public final String MESSAGE_TWO_DIFFERENT_REAL_ROOTS = "This equation has two different real roots"; //show real roots of equation
+    public final String MESSAGE_TWO_EQUAL_REAL_ROOTS = "This equation has two equal real roots";
+    public final String MESSAGE_TWO_DIFFERENT_REAL_ROOTS = "This equation has two different real roots";
 
     public double coefficientA;
     public double coefficientB;
