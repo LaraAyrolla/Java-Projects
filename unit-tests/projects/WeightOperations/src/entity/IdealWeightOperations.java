@@ -45,36 +45,30 @@ public class IdealWeightOperations extends WeightOperations {
             return age * 2 + 9;
         }
 
-        if (Objects.equals(sex, this.SEX_FEMALE)) {
-            if (age <= 64) {
-                this.idealBmi = 21;
-            } else if (age <= 69) {
-                    this.idealBmi = 26.5;
-            } else if (age <= 74) {
-                this.idealBmi = 26.3;
-            } else if (age <= 79) {
-                this.idealBmi = 26.1;
-            } else if (age <= 84) {
-                this.idealBmi = 25.5;
-            } else {
-                this.idealBmi = 23.6;
-            }
+        if (Objects.equals(sex, SEX_FEMALE)) {
+            idealBmi = this.defineFemaleIdealBmi(age);
         } else {
-            if (age <= 64) {
-                this.idealBmi = 22;
-            } else if (age <= 69) {
-                    this.idealBmi = 24.3;
-            } else if (age <= 74) {
-                this.idealBmi = 25.1;
-            } else if (age <= 79) {
-                this.idealBmi = 23.9;
-            } else if (age <= 84) {
-                this.idealBmi = 23.7;
-            } else {
-                this.idealBmi = 23.1;
-            }
+            idealBmi = this.defineMaleIdealBmi(age);
         }
 
         return this.idealBmi * (pow(height, 2));
+    }
+
+    private double defineFemaleIdealBmi(int age) {
+        if (age <= 64) return 21;
+        if (age <= 69) return 26.5;
+        if (age <= 74) return 26.3;
+        if (age <= 79) return 26.1;
+        if (age <= 84) return 25.5;
+        return 23.6;
+    }
+
+    private double defineMaleIdealBmi(int age) {
+        if (age <= 64) return 22;
+        if (age <= 69) return 24.3;
+        if (age <= 74) return 25.1;
+        if (age <= 79) return 23.9;
+        if (age <= 84) return 23.7;
+        return 23.1;
     }
 }
