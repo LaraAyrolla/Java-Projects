@@ -4,12 +4,12 @@ import entity.Library;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Library library = new Library();
+
         System.out.println("Welcome to the library!\n");
 
         do {
-            Scanner scanner = new Scanner(System.in);
-
             System.out.println("* Type 1 to register a new book");
             System.out.println("* Type 2 for info on a registered book");
             System.out.println("* Type 3 to loan a registered book");
