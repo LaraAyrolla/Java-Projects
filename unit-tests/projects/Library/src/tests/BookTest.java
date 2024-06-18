@@ -1,18 +1,18 @@
 package tests;
 
 import entity.Book;
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class BookTest {
     @Test
     public void testBookCreation() {
         Book book = new Book("The Gilded Wolves", "Roshani Chokshi", "9781250144546");
 
-        assertEquals("The Gilded Wolves", book.getTitle());
-        assertEquals("Roshani Chokshi", book.getAuthor());
-        assertEquals("9781250144546", book.getIsbn());
-        assertFalse(book.isLoaned());
+        Assert.assertEquals("The Gilded Wolves", book.getTitle());
+        Assert.assertEquals("Roshani Chokshi", book.getAuthor());
+        Assert.assertEquals("9781250144546", book.getIsbn());
+        Assert.assertFalse(book.isLoaned());
     }
 
     @Test
@@ -24,9 +24,9 @@ public class BookTest {
         book.setIsbn("9781733973311");
         book.setLoaned(true);
 
-        assertEquals("100 Days of Sunlight", book.getTitle());
-        assertEquals("Abbie Emmons", book.getAuthor());
-        assertEquals("9781733973311", book.getIsbn());
-        assertTrue(book.isLoaned());
+        Assert.assertEquals("100 Days of Sunlight", book.getTitle());
+        Assert.assertEquals("Abbie Emmons", book.getAuthor());
+        Assert.assertEquals("9781733973311", book.getIsbn());
+        Assert.assertTrue(book.isLoaned());
     }
 }

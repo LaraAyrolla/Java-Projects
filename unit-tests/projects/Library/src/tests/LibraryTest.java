@@ -2,8 +2,8 @@ package tests;
 
 import entity.Book;
 import entity.Library;
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class LibraryTest {
     @Test
@@ -13,7 +13,7 @@ public class LibraryTest {
 
         library.addBook(book);
 
-        assertEquals(book, library.findBookByISBN("9781416902638"));
+        Assert.assertEquals(book, library.findBookByISBN("9781416902638"));
     }
 
     @Test
@@ -22,10 +22,10 @@ public class LibraryTest {
         Book book = new Book("Sense and Sensibility", "Jane Austen", "B096LMV46Q");
 
         library.addBook(book);
-        assertEquals(book, library.findBookByISBN("B096LMV46Q"));
+        Assert.assertEquals(book, library.findBookByISBN("B096LMV46Q"));
 
         library.removeBook(book);
-        assertNull(library.findBookByISBN("B096LMV46Q"));
+        Assert.assertNull(library.findBookByISBN("B096LMV46Q"));
     }
 
     @Test
@@ -38,10 +38,10 @@ public class LibraryTest {
         );
 
         library.addBook(book);
-        assertFalse(book.isLoaned());
+        Assert.assertFalse(book.isLoaned());
 
         library.registerLoan("154209769X");
-        assertTrue(book.isLoaned());
+        Assert.assertTrue(book.isLoaned());
     }
 
     @Test
@@ -50,12 +50,12 @@ public class LibraryTest {
         Book book = new Book("Beautiful Redemption", "Kami Garcia", "9780316123532");
 
         library.addBook(book);
-        assertFalse(book.isLoaned());
+        Assert.assertFalse(book.isLoaned());
 
         library.registerLoan("9780316123532");
-        assertTrue(book.isLoaned());
+        Assert.assertTrue(book.isLoaned());
 
         library.registerReturn("9780316123532");
-        assertFalse(book.isLoaned());
+        Assert.assertFalse(book.isLoaned());
     }
 }
