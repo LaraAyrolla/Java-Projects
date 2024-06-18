@@ -7,7 +7,8 @@ import org.junit.runners.Suite;
 
 @Suite.SuiteClasses({
         BookTest.class,
-        LibraryTest.class
+        LibraryTest.class,
+        MainTest.class
 })
 
 public class TestSuite {
