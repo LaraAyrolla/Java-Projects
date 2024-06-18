@@ -1,3 +1,5 @@
+package main;
+
 import java.util.Scanner;
 import entity.Book;
 import entity.Library;
@@ -14,7 +16,9 @@ public class Main {
             System.out.println("* Type 2 for info on a registered book");
             System.out.println("* Type 3 to loan a registered book");
             System.out.println("* Type 4 to return a loaned book");
-            System.out.println("* Type 5 to remove a registered book\n");
+            System.out.println("* Type 5 to remove a registered book");
+            System.out.println("* Type 6 to stop the application\n");
+
 
             String action = scanner.nextLine();
 
@@ -34,6 +38,8 @@ public class Main {
                 case "5":
                     actionRemoveBook(scanner, library);
                     break;
+                case "6":
+                    return;
                 default:
                     System.out.println("\nInvalid option!\n");
                     break;
@@ -41,7 +47,7 @@ public class Main {
         } while (true);
     }
 
-    private static void actionRegisterBook(Scanner scanner, Library library) {
+    public static void actionRegisterBook(Scanner scanner, Library library) {
         System.out.print("\nTitle: ");
         String title = scanner.nextLine();
 
@@ -61,7 +67,7 @@ public class Main {
         System.out.println("\nBook successfully registered!\n");
     }
 
-    private static void actionRetrieveBookInfo(Scanner scanner, Library library) {
+    public static void actionRetrieveBookInfo(Scanner scanner, Library library) {
         System.out.print("\nISBN: ");
         Book book = library.findBookByISBN(scanner.nextLine());
 
@@ -74,7 +80,7 @@ public class Main {
         }
     }
 
-    private static void actionRegisterLoan(Scanner scanner, Library library) {
+    public static void actionRegisterLoan(Scanner scanner, Library library) {
         System.out.print("\nISBN: ");
         Book book = library.findBookByISBN(scanner.nextLine());
 
@@ -92,7 +98,7 @@ public class Main {
         System.out.println("\nBook successfully loaned!\n");
     }
 
-    private static void actionRegisterReturn(Scanner scanner, Library library) {
+    public static void actionRegisterReturn(Scanner scanner, Library library) {
         System.out.print("\nISBN: ");
         Book book = library.findBookByISBN(scanner.nextLine());
 
@@ -110,7 +116,7 @@ public class Main {
         System.out.println("\nBook successfully returned!\n");
     }
 
-    private static void actionRemoveBook(Scanner scanner, Library library) {
+    public static void actionRemoveBook(Scanner scanner, Library library) {
         System.out.print("\nISBN: ");
         Book book = library.findBookByISBN(scanner.nextLine());
 

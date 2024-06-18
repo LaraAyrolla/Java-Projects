@@ -16,7 +16,7 @@ public class BookTest {
     }
 
     @Test
-    public void testSetters() {
+    public void testSettersAndGetters() {
         Book book = new Book("The Gilded Wolves", "Roshani Chokshi", "9781250144546");
 
         book.setTitle("100 Days of Sunlight");
@@ -28,5 +28,15 @@ public class BookTest {
         Assert.assertEquals("Abbie Emmons", book.getAuthor());
         Assert.assertEquals("9781733973311", book.getIsbn());
         Assert.assertTrue(book.isLoaned());
+    }
+
+    @Test
+    public void testBookToString() {
+        Book book = new Book("White Nights", "Fyodor Dostoevsky", "9783863524456");
+
+        Assert.assertEquals(
+                " Title: White Nights \n Author: Fyodor Dostoevsky \n ISBN: 9783863524456 \n Is Loaned? No",
+                book.toString()
+        );
     }
 }
