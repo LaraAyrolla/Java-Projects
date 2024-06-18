@@ -42,75 +42,75 @@ public class MainTest {
 
     @Test
     public void testActionRegisterBook() {
-        String input = "Title6\nAuthor6\nISBN6\n";
+        String input = "Dom Casmurro\nMachado de Assis\n9788542221091\n";
         InputStream in = new ByteArrayInputStream(input.getBytes());
         Scanner scanner = new Scanner(in);
 
         actionRegisterBook(scanner, library);
 
-        Book book = library.findBookByISBN("ISBN6");
+        Book book = library.findBookByISBN("9788542221091");
         Assert.assertNotNull(book);
-        Assert.assertEquals("Title6", book.getTitle());
-        Assert.assertEquals("Author6", book.getAuthor());
-        Assert.assertEquals("ISBN6", book.getIsbn());
+        Assert.assertEquals("Dom Casmurro", book.getTitle());
+        Assert.assertEquals("Machado de Assis", book.getAuthor());
+        Assert.assertEquals("9788542221091", book.getIsbn());
     }
 
     @Test
     public void testActionRetrieveBookInfo() {
         // Add a book first
-        Book book = new Book("Title7", "Author7", "ISBN7");
+        Book book = new Book("Dom Casmurro", "Machado de Assis", "9788542221091");
         library.addBook(book);
 
         // Simulate user input for the ISBN
-        String input = "ISBN7\n";
+        String input = "9788542221091\n";
         InputStream in = new ByteArrayInputStream(input.getBytes());
         Scanner scanner = new Scanner(in);
 
         actionRetrieveBookInfo(scanner, library);
 
-        Assert.assertNotNull(library.findBookByISBN("ISBN7"));
+        Assert.assertNotNull(library.findBookByISBN("9788542221091"));
     }
 
     @Test
     public void testActionRegisterLoan() {
-        Book book = new Book("Title8", "Author8", "ISBN8");
+        Book book = new Book("Dom Casmurro", "Machado de Assis", "9788542221091");
         library.addBook(book);
 
-        String input = "ISBN8\n";
+        String input = "9788542221091\n";
         InputStream in = new ByteArrayInputStream(input.getBytes());
         Scanner scanner = new Scanner(in);
 
         actionRegisterLoan(scanner, library);
 
-        Assert.assertTrue(library.findBookByISBN("ISBN8").isLoaned());
+        Assert.assertTrue(library.findBookByISBN("9788542221091").isLoaned());
     }
 
     @Test
     public void testActionRegisterReturn() {
-        Book book = new Book("Title9", "Author9", "ISBN9");
+        Book book = new Book("Dom Casmurro", "Machado de Assis", "9788542221091");
         library.addBook(book);
-        library.registerLoan("ISBN9");
+        library.registerLoan("9788542221091");
 
-        String input = "ISBN9\n";
+        String input = "9788542221091\n";
         InputStream in = new ByteArrayInputStream(input.getBytes());
         Scanner scanner = new Scanner(in);
 
         actionRegisterReturn(scanner, library);
 
-        Assert.assertFalse(library.findBookByISBN("ISBN9").isLoaned());
+        Assert.assertFalse(library.findBookByISBN("9788542221091").isLoaned());
     }
 
     @Test
     public void testActionRemoveBook() {
-        Book book = new Book("Title10", "Author10", "ISBN10");
+        Book book = new Book("Dom Casmurro", "Machado de Assis", "9788542221091");
         library.addBook(book);
 
-        String input = "ISBN10\n";
+        String input = "9788542221091\n";
         InputStream in = new ByteArrayInputStream(input.getBytes());
         Scanner scanner = new Scanner(in);
 
         actionRemoveBook(scanner, library);
 
-        Assert.assertNull(library.findBookByISBN("ISBN10"));
+        Assert.assertNull(library.findBookByISBN("9788542221091"));
     }
 }
